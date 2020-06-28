@@ -30,13 +30,13 @@ func getMyIP() string {
 }
 
 func viewHandler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hi there, You asked for %s! I am %s", r.URL.Path[1:], getMyIP())
+    fmt.Fprintf(w, "Hi there, You asked for %s! I am %s\n", r.URL.Path[1:], getMyIP())
 }
 
 func misbehaveHandler(w http.ResponseWriter, r *http.Request) {
      // see http://golang.org/pkg/net/http/#pkg-constants
      w.WriteHeader(http.StatusServiceUnavailable)
-     fmt.Fprintf(w, "MISBEHAVING! HTTP status code returned from %s!", getMyIP())
+     fmt.Fprintf(w, "MISBEHAVING! HTTP status code returned from %s!\n", getMyIP())
      //w.Write([]byte("MISBEHAVING! HTTP status code returned!"))
 }
 
